@@ -13,7 +13,7 @@ export default function Player() {
   const [moveDirection, setMoveDirection] = useState({ forward: 0, right: 0 })
   
   // 物理演算を適用した球体
-  const [playerRef, api] = useSphere(() => ({
+  const [playerRef, api] = useSphere<THREE.Mesh>(() => ({
     mass: 1,
     position: [0, 1, 0],
     args: [0.5],
@@ -144,7 +144,7 @@ export default function Player() {
 
   return (
     <Sphere
-      ref={playerRef as any}
+      ref={playerRef}
       args={[0.5, 16, 16]}
       position={[0, 1, 0]}
       castShadow
