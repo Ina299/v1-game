@@ -12,17 +12,17 @@ def export_scene():
         filepath=os.path.join(output_dir, "stage.glb"),
         export_format='GLB',
         use_selection=False,
-        export_textures=True,
+        # export_textures=True,  # Removed as it's likely deprecated or included in materials
         export_normals=True,
         export_tangents=True,
         export_materials='EXPORT',
-        export_colors=True,
-        export_cameras=True,
-        export_lights=True,
-        export_animations=True,
-        export_frame_range=True,
+        # export_colors=True, # Removed as it might be deprecated or included elsewhere
+        export_cameras=True, # Export cameras if needed
+        export_lights=True, # Export lights if needed
+        export_animations=True, # Export animations if present
+        export_frame_range=False, # Typically False unless exporting specific frame animation
         export_frame_step=1,
-        export_apply=False
+        export_apply=True # Apply modifiers
     )
     
     print("Model exported successfully to", os.path.join(output_dir, "stage.glb"))
