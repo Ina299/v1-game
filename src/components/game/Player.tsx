@@ -43,19 +43,19 @@ export default function Player() {
       switch (e.code) {
         case 'KeyW':
         case 'ArrowUp':
-          setMoveDirection((prev) => ({ ...prev, forward: 1 }))
+          setMoveDirection((prev) => ({ ...prev, forward: -1 }))
           break
         case 'KeyS':
         case 'ArrowDown':
-          setMoveDirection((prev) => ({ ...prev, forward: -1 }))
+          setMoveDirection((prev) => ({ ...prev, forward: 1 }))
           break
         case 'KeyA':
         case 'ArrowLeft':
-          setMoveDirection((prev) => ({ ...prev, right: -1 }))
+          setMoveDirection((prev) => ({ ...prev, right: 1 }))
           break
         case 'KeyD':
         case 'ArrowRight':
-          setMoveDirection((prev) => ({ ...prev, right: 1 }))
+          setMoveDirection((prev) => ({ ...prev, right: -1 }))
           break
         case 'Space':
           if (Math.abs(velocity.current[1]) < 0.1) {
